@@ -11,7 +11,8 @@ import Col from 'react-bootstrap/esm/Col';
 
 const Auth = () => {
     const location = useLocation()
-    const isLogin = location.pathname == {LOGIN_ROUTE}
+    const isLogin = location.pathname === LOGIN_ROUTE
+
     return (
         <Container 
         className='d-flex justify-content-center align-items-center text-decoration-none text-reset'
@@ -37,11 +38,11 @@ const Auth = () => {
                     <Col sm={8}>
                     {isLogin ? 
                     <div>
-                        Нет аккаунта? <NavLink to = {REGISTRATION_ROUTE} className = "text-decoration-none">Зарегистрируйся!</NavLink>
+                        Нет аккаунта? <NavLink to = {REGISTRATION_ROUTE} className = "link-underline-light">Зарегистрируйся!</NavLink>
                     </div>
                     :
                     <div>
-                        Есть аккаунт? <NavLink to = {LOGIN_ROUTE}>Войдите</NavLink>
+                        Есть аккаунт? <NavLink to = {LOGIN_ROUTE} className = "link-underline-light">Войдите</NavLink>
                     </div>
                     }
                     </Col>
