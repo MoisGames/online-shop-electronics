@@ -10,15 +10,22 @@ export default class DeviceStore {
         ]
         this._brands = [
             {id: 1, name: 'Samsung'},
-            {id: 2, name: 'Apple'}
+            {id: 2, name: 'Apple'},
+            {id: 3, name: 'Lenovo'},
+            {id: 4, name: 'Asus'}
         ]
         this._devices = [
-            {id: 1, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:\Project-React\online-store-electronics\server\static\iphone12Pro_1.jpg'},
-            {id: 2, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:\Project-React\online-store-electronics\server\static\iphone12Pro_2.jpg'},
-            {id: 3, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:\Project-React\online-store-electronics\server\static\iphone12Pro_3.jpg'},
-            {id: 4, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:\Project-React\online-store-electronics\server\static\iphone12Pro_4.jpg'},
+            {id: 1, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/client/src/assets/preview.gif'},
+            {id: 2, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_2.jpg'},
+            {id: 3, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_3.jpg'},
+            {id: 4, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_4.jpg'},
+            {id: 5, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/client/src/assets/preview.gif'},
+            {id: 6, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_2.jpg'},
+            {id: 7, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_3.jpg'},
+            {id: 8, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_4.jpg'},
         ]
         this._selectedType = {};
+        this._selectedBrand = {};
         makeAutoObservable (this);
     }
 
@@ -38,6 +45,10 @@ export default class DeviceStore {
         this._selectedType = type;
     }
 
+    setSelectedBrand(brand) {
+        this._selectedBrand = brand;
+    }
+
     get types() {
         return this._types;
     }
@@ -52,5 +63,9 @@ export default class DeviceStore {
 
     get selectedType() {
         return this._selectedType;
+    }
+
+    get selectedBrand() {
+        return this._selectedBrand
     }
 }
