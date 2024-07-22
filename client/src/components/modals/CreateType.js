@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Button, Form, Modal, ModalFooter } from 'react-bootstrap';
 
 
-const CreateType = (show, onHide) => {
+const CreateType = ({show, onHide}) => {
     return (
         <Modal
             show = {show}
@@ -20,10 +20,18 @@ const CreateType = (show, onHide) => {
             <Form.Control 
                 placeholder='Введите название типа...'
             />
-            <Button variant='outline-danger' className='m-2 '>Закрыть</Button>
-            <Button variant='outline-success' className='m-2 '>Добавить</Button>
             </Form>
       </Modal.Body>
+      <ModalFooter>
+            <Button 
+                variant='outline-danger' 
+                className='m-2'
+                >Закрыть</Button>
+            <Button 
+                variant='outline-success' 
+                className='m-2'
+                >Добавить</Button>
+      </ModalFooter>
     </Modal>
     );
 };
