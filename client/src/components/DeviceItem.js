@@ -6,7 +6,6 @@ import {DEVICE_ROUTE} from '../utils/consts'
 
 const DeviceItem = ({device}) => {
     const history = useNavigate()
-    console.log(history)
     return (
         <Col 
         md = {3} 
@@ -23,6 +22,7 @@ const DeviceItem = ({device}) => {
                     </div>
             </div>
             <div style = {{fontSize: 20}}>{device.name}</div>
+            <div style = {{fontSize: 25}}>{device.price} руб.</div>
             </Card>
         </Col>
     );

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Container from 'react-bootstrap/Container';
 import Card from 'react-bootstrap/Card';
 import Form from "react-bootstrap/Form"
@@ -7,16 +7,27 @@ import Row from 'react-bootstrap/Row'
 import { NavLink, useLocation } from 'react-router-dom';
 import { LOGIN_ROUTE, REGISTRATION_ROUTE } from '../utils/consts';
 import Col from 'react-bootstrap/esm/Col';
+import { registration, login, check } from '../http/userAPI';
 
 
 const Auth = () => {
     const location = useLocation()
     const isLogin = location.pathname === LOGIN_ROUTE
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+    const click = async () => {
+        if (isLogin) {
+            const response = await login()
+        } else {
+            const response = registration (email, password)
+            console.log(response); 
+        }
+    }
 
     return (
         <Container 
         className='d-flex justify-content-center align-items-center text-decoration-none text-reset'
-        
         style={{height: window.innerHeight - 100, textDecoration: 'none'}}
         >
         <Card className='p-5'>
@@ -27,10 +38,15 @@ const Auth = () => {
                 <Form.Control 
                 className="mt-3"
                 placeholder='Введите ваш email...'
+                value={email}
+                onChange={elem => setEmail(elem.target.value)}
                 />
                 <Form.Control
                 className="mt-3"
                 placeholder='Введите ваш пароль...'
+                value={password}
+                onChange={elem => setPassword(elem.target.value)}
+                type='password'
                 />
                 <Row 
                 className='d-flex justify-content-between mt-3 ml-3 mr-3'
@@ -50,6 +66,7 @@ const Auth = () => {
                     <Col sm={3}>
                     <Button
                         variant={"outline-success"}
+                        onClick={click}
                         >
                         {isLogin ? "Войти" : "Регистрация"}
                         </Button>

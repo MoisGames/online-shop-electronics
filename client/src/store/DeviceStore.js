@@ -1,4 +1,6 @@
 import {makeAutoObservable} from 'mobx'
+import iphone from '../assets/iphone12Pro_1.jpg'
+
 
 export default class DeviceStore {
     constructor() {
@@ -15,14 +17,14 @@ export default class DeviceStore {
             {id: 4, name: 'Asus'}
         ]
         this._devices = [
-            {id: 1, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/client/src/assets/preview.gif'},
-            {id: 2, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_2.jpg'},
-            {id: 3, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_3.jpg'},
-            {id: 4, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_4.jpg'},
-            {id: 5, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/client/src/assets/preview.gif'},
-            {id: 6, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_2.jpg'},
-            {id: 7, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_3.jpg'},
-            {id: 8, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'C:/Project-React/online-store-electronics/server/static/iphone12Pro_4.jpg'},
+            {id: 1, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 2, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 3, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 4, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 5, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 6, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 7, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
+            {id: 8, name: 'Iphone 12 Pro', price: 25000, rating: '5', img: 'https://static.re-store.ru/upload/resize_cache/iblock/e60/100500_800_140cd750bba9870f18aada2478b24840a/0ldt9e4b9lbjpalek89p8hiqxldbuv2o.jpg'},
         ]
         this._selectedType = {};
         this._selectedBrand = {};
