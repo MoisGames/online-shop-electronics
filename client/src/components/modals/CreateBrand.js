@@ -1,10 +1,19 @@
-import React, { useContext } from 'react';
-import { Modal, Button, Dropdown, ModalFooter, DropdownToggle } from 'react-bootstrap';
-import { Context } from '../..';
+import React, {useState } from 'react';
+import { Modal, Button,ModalFooter , Form} from 'react-bootstrap';
+import { createBrand } from '../../http/deviceAPI';
+import BrandBar from '../BrandBar';
 
 
 const CreateBrand = ({show, onHide}) => {
-    const {device} = useContext(Context)
+
+    const [value, setValue] = useState('')
+
+    const addBrand = () => {
+      createBrand({name: value}).then(data => {
+        setValue('')
+        onHide()
+      })
+    }
 
     return (
         <Modal
@@ -19,20 +28,25 @@ const CreateBrand = ({show, onHide}) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
-      <Dropdown>
-             <DropdownToggle>Выберите бренд</DropdownToggle>
-             <Dropdown.Menu>
-                 {device.brands.map( brand =>
-                     <Dropdown.Item key = {brand.id}>
-                         {brand.name}
-                     </Dropdown.Item>
-                 )}
-             </Dropdown.Menu>
-        </Dropdown>
+      <Form>
+            <Form.Control
+                value={value}
+                onChange={e => setValue(e.target.value)} 
+                placeholder='Введите название бренда...'
+            />
+            </Form>
       </Modal.Body>
       <ModalFooter>
-            <Button variant='outline-danger' className='m-2 '>Закрыть</Button>
-            <Button variant='outline-success' className='m-2 '>Добавить</Button>
+            <Button 
+            onClick={onHide}
+            variant='outline-danger' 
+            className='m-2 '
+            >Закрыть</Button>
+            <Button 
+            onClick={addBrand}
+            variant='outline-success' 
+            className='m-2 '
+            >Добавить</Button>
       </ModalFooter>
     </Modal>
     );

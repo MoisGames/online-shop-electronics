@@ -14,9 +14,11 @@ const app = express()
 app.use(cors()) // Функция cors 
 app.use(express.json()) // Через express парсим Json
 
-// app.use(express.static(path.resolve(__dirname, 'static')))
-// app.use(fileUpload({}))
-// app.use('/api', router)
+
+
+app.use(express.static(path.resolve(__dirname, 'static')))
+app.use(fileUpload({}))
+app.use('/api', router)
 
 // Обработка ошибок, последний Middleware
 app.use(errorHandler)
@@ -24,10 +26,11 @@ app.use(errorHandler)
 const start = async () => { // все операции с бд асинхронные
     try {
         await sequelize.authenticate() // Аутентификация
-        // await sequelize.sync() // сверяет базу данных со схемой данных
+        await sequelize.sync() // сверяет базу данных со схемой данных
         app.listen(PORT, () => console.log(`Server started on port ${PORT}`))
     } catch (e) {
         console.log(e)
+        
     }
 }
 
